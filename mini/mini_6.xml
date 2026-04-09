@@ -1,0 +1,20 @@
+<žaidimų_parduotuvė xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="mini_6.xsd">
+    <žaidimas steam_id="7581546580">
+        <pavadinimas>Zombiai</pavadinimas>
+        <stilius>Šaudyklė</stilius>
+        <online>Taip</online>
+        <kaina>25$</kaina>
+    </žaidimas>
+    <žaidimas steam_id="6539688821">
+        <pavadinimas>Mario Kart</pavadinimas>
+        <stilius>Lenktynės</stilius>
+        <online>Taip</online>
+        <kaina>49.99€</kaina>
+    </žaidimas>
+    <žaidimas steam_id="5672834321">
+        <pavadinimas>Minecraft</pavadinimas>
+        <stilius>Išlikimas</stilius>
+        <online>Ne</online>
+        <kaina>40.0$</kaina>
+    </žaidimas>
+</žaidimų_parduotuvė>

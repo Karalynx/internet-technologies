@@ -1,0 +1,33 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="Online">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Taip"/>
+            <xs:enumeration value="Ne"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Kaina">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="\d+(\.\d{1,2})?($|€|£|¥)"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Žaidimas">
+        <xs:sequence>
+            <xs:element name="pavadinimas" type="xs:string"/>
+            <xs:element name="stilius" type="xs:string"/>
+            <xs:element name="online" type="Online"/>
+            <xs:element name="kaina" type="Kaina"/>
+        </xs:sequence>
+        <xs:attribute name="steam_id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:element name="žaidimų_parduotuvė">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="žaidimas" type="Žaidimas" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

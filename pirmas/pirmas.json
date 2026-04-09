@@ -1,0 +1,132 @@
+{
+    "aeroports": [
+        {
+            "name": "John F. Kennedy International Airport",
+            "website": "www.jfkairport.com",
+            "location": {
+                "city": "New York City",
+                "state": "New York",
+                "country": "United States of America"
+            },
+            "flights": [
+                {
+                    "airline": "British Airways",
+                    "origin": "John F. Kennedy International Airport",
+                    "destination": "London Heathrow Airport",
+                    "departure": {
+                        "date": "2024-09-30",
+                        "time": "13:00"
+                    },
+                    "arrival": {
+                        "date": "2024-09-30",
+                        "time": "21:00"
+                    },
+                    "status": "On Time",
+                    "price": {
+                        "currency": "USD",
+                        "amount": "2500"
+                    },
+                    "_class": "business",
+                    "_gate": "C34"
+                },
+                {
+                    "airline": "Delta Air Lines",
+                    "origin": "John F. Kennedy International Airport",
+                    "destination": "Los Angeles International Airport",
+                    "departure": {
+                        "date": "2024-09-30",
+                        "time": "15:00"
+                    },
+                    "arrival": {
+                        "date": "2024-09-30",
+                        "time": "18:00"
+                    },
+                    "status": "Delayed",
+                    "price": {
+                        "currency": "USD",
+                        "amount": "300"
+                    },
+                    "_class": "economy",
+                    "_gate": "B12"
+                }
+            ],
+            "_timezone": "EST",
+            "_latitude": "40.6442",
+            "_longitude": "-73.7822"
+        },
+        {
+            "name": "London Heathrow Airport",
+            "website": "www.heathrow.com",
+            "location": {
+                "city": "London",
+                "state": null,
+                "country": "United Kingdom"
+            },
+            "flights": [
+                {
+                    "airline": "British Airways",
+                    "origin": "London Heathrow Airport",
+                    "destination": "John F. Kennedy International Airport",
+                    "departure": {
+                        "date": "2024-09-30",
+                        "time": "10:00"
+                    },
+                    "arrival": {
+                        "date": "2024-09-30",
+                        "time": "14:00"
+                    },
+                    "status": "On Time",
+                    "price": {
+                        "currency": "GBP",
+                        "amount": "2000"
+                    },
+                    "_class": "first",
+                    "_gate": "A10"
+                },
+                {
+                    "airline": "Virgin Atlantic",
+                    "origin": "London Heathrow Airport",
+                    "destination": "Dubai International Airport",
+                    "departure": {
+                        "date": "2024-09-30",
+                        "time": "12:00"
+                    },
+                    "arrival": {
+                        "date": "2024-09-30",
+                        "time": "22:00"
+                    },
+                    "status": "On Time",
+                    "price": {
+                        "currency": "GBP",
+                        "amount": "500"
+                    },
+                    "_class": "economy",
+                    "_gate": "B22"
+                },
+                {
+                    "airline": "Emirates",
+                    "origin": "London Heathrow Airport",
+                    "destination": "Dubai International Airport",
+                    "departure": {
+                        "date": "2024-09-30",
+                        "time": "14:00"
+                    },
+                    "arrival": {
+                        "date": "2024-09-30",
+                        "time": "00:00"
+                    },
+                    "status": "On Time",
+                    "price": {
+                        "currency": "GBP",
+                        "amount": "1500"
+                    },
+                    "_class": "business",
+                    "_gate": "C14"
+                }
+            ],
+            "_timezone": "GMT",
+            "_latitude": "51.4700",
+            "_longitude": "-0.4543"
+        }
+    ]
+}

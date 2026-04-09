@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+      "game": {
+        "type": "object",
+        "properties": {
+          "pavadinimas": { 
+            "type": "string"
+          },
+          "stilius": { 
+            "type": "string"
+          },
+          "online": { 
+            "type": "string",
+            "enum": ["Taip", "Ne"]
+          },
+          "kaina": { 
+            "type": "string",
+            "pattern": "^\\d+(\\.\\d{1,2})?(\\$|€|£|¥)$"
+          },
+          "_steam_id": { 
+            "type": "string"
+          }
+        },
+        "required": [
+          "pavadinimas",
+          "stilius",
+          "online",
+          "kaina",
+          "_steam_id"
+        ]
+      }
+    },
+    "type": "object",
+    "properties": {
+      "žaidimų_parduotuvė": {
+        "type": "object",
+        "properties": {
+          "žaidimai": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/game"
+            }
+          }
+        },
+        "required": [
+          "žaidimai"
+        ]
+      }
+    },
+    "required": [
+      "žaidimų_parduotuvė"
+    ]
+  }
+  

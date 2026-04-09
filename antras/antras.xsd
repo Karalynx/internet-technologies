@@ -1,0 +1,150 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="CountryName">
+        <xs:restriction base="xs:string"/> 
+    </xs:simpleType>
+    
+    <xs:complexType name="DateTime">
+        <xs:sequence>
+            <xs:element name="date" type="xs:date"/>
+            <xs:element name="time" type="xs:time"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="Cost">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="\d+(\.\d{1,2})?"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Price">
+        <xs:sequence>
+            <xs:element name="currency" type="TLA"/>
+            <xs:element name="amount" type="Cost"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="Latitude">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="-90"/>
+            <xs:maxInclusive value="90"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="Longitude">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="-180"/>
+            <xs:maxInclusive value="180"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="FlightStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OnTime"/>
+            <xs:enumeration value="Delayed"/>
+            <xs:enumeration value="Canceled"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="FlightClass">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Economy"/>
+            <xs:enumeration value="Business"/>
+            <xs:enumeration value="First"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Flight">
+        <xs:sequence>
+            <xs:element name="airline" type="xs:string"/>
+            <xs:element name="destination" type="xs:string"/>
+            <xs:element name="destination_ref" type="FLA"/>
+            <xs:element name="departure" type="DateTime"/>
+            <xs:element name="arrival" type="DateTime"/>
+            <xs:element name="status" type="FlightStatus"/>
+            <xs:element name="price" type="Price"/>
+        </xs:sequence>
+        <xs:attribute name="class" type="FlightClass" use="required"/>
+        <xs:attribute name="gate" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Country">
+        <xs:simpleContent>
+            <xs:extension base="CountryName">
+                <xs:attribute name="timezone" type="TLA" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="Location">
+        <xs:sequence>
+            <xs:element name="city" type="xs:string"/>
+            <xs:choice minOccurs="0">
+                <xs:element name="state" type="xs:string"/>
+                <xs:element name="province" type="xs:string"/>
+            </xs:choice>
+            <xs:element name="country" type="Country"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AccurateLocation">
+        <xs:complexContent>
+            <xs:extension base="Location">
+                <xs:attribute name="latitude" type="Latitude" use="required"/>
+                <xs:attribute name="longitude" type="Longitude" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="Abbreviation">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TLA">
+        <xs:restriction base="Abbreviation">
+            <xs:length value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="FLA">
+        <xs:restriction base="Abbreviation">
+            <xs:length value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Aeroport">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="website" type="xs:string"/>
+            <xs:element name="location" type="AccurateLocation"/>
+            <xs:element name="flights">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="flight" type="Flight" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="icao_code" type="FLA" use="required"/>
+    </xs:complexType>
+
+    <xs:element name="aeroports">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="aeroport" type="Aeroport" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:key name="icao_code">
+            <xs:selector xpath="aeroport"/>
+            <xs:field xpath="@icao_code"/>
+        </xs:key>
+        <xs:keyref name="destination_ref" refer="icao_code">
+            <xs:selector xpath="flight"/>
+            <xs:field xpath="@destination_ref"/>
+        </xs:keyref>
+    </xs:element>
+
+</xs:schema>

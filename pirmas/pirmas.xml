@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aeroports xmlns="http://example.com/aeroports" xmlns:flt="http://example.com/flight">
+    <aeroport timezone="EST" latitude="40.6442" longitude="-73.7822">
+        <name>John F. Kennedy International Airport</name>
+        <website>www.jfkairport.com</website>
+        <location>
+            <city>New York City</city>
+            <state>New York</state>
+            <country>United States of America</country>
+        </location> 
+        <flt:flights>
+            <flt:flight class="business" gate="C34">
+                <airline>British Airways</airline>
+                <origin>John F. Kennedy International Airport</origin> 
+                <destination>London Heathrow Airport</destination>
+                <departure xmlns:help="www.cia.com/location">
+                    <date>2024-09-30</date>
+                    <time>13:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-09-30</date>
+                    <time>21:00</time>
+                </arrival>
+                <status>On Time</status>
+                <price>
+                    <currency>USD</currency>
+                    <amount>2500</amount>
+                </price>
+            </flt:flight>
+            <flt:flight class="economy" gate="B12">
+                <airline>Delta Air Lines</airline>
+                <origin>John F. Kennedy International Airport</origin> 
+                <destination>Los Angeles International Airport</destination>
+                <departure>
+                    <date>2024-09-30</date>
+                    <time>15:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-09-30</date>
+                    <time>18:00</time>
+                </arrival>
+                <status>Delayed</status>
+                <price>
+                    <currency>USD</currency>
+                    <amount>300</amount>
+                </price>
+            </flt:flight>
+            <flt:flight class="economy" gate="B10">
+                <airline>Delta Air Lines</airline>
+                <origin>John F. Kennedy International Airport</origin> 
+                <destination>Los Angeles International Airport</destination>
+                <departure>
+                    <date>2024-10-01</date>
+                    <time>10:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-10-01</date>
+                    <time>13:00</time>
+                </arrival>
+                <status>On-Time</status>
+                <price>
+                    <currency>USD</currency>
+                    <amount>300</amount>
+                </price>
+            </flt:flight>
+        </flt:flights>
+    </aeroport>
+    <aeroport timezone="GMT" latitude="51.4700" longitude="-0.4543">
+        <name>London Heathrow Airport</name>
+        <website>www.heathrow.com</website>
+        <location>
+            <city>London</city>
+            <state/>
+            <country>United Kingdom</country>
+        </location> 
+        <flt:flights>
+            <flt:flight class="first" gate="A10">
+                <airline>British Airways</airline>
+                <origin>London Heathrow Airport</origin> 
+                <destination>John F. Kennedy International Airport</destination>
+                <departure>
+                    <date>2024-09-30</date>
+                    <time>10:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-09-30</date>
+                    <time>14:00</time>
+                </arrival>
+                <status>On Time</status>
+                <price>
+                    <currency>GBP</currency>
+                    <amount>2000</amount>
+                </price>
+            </flt:flight>
+            <flt:flight class="economy" gate="B22">
+                <airline>Virgin Atlantic</airline>
+                <origin>London Heathrow Airport</origin> 
+                <destination>Dubai International Airport</destination>
+                <departure>
+                    <date>2024-09-30</date>
+                    <time>12:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-09-30</date>
+                    <time>22:00</time>
+                </arrival>
+                <status>On Time</status>
+                <price>
+                    <currency>GBP</currency>
+                    <amount>500</amount>
+                </price>
+            </flt:flight>
+            <flt:flight class="business" gate="C14">
+                <airline>Emirates</airline>
+                <origin>London Heathrow Airport</origin> 
+                <destination>Dubai International Airport</destination>
+                <departure>
+                    <date>2024-09-30</date>
+                    <time>14:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-09-30</date>
+                    <time>00:00</time>
+                </arrival>
+                <status>On Time</status>
+                <price>
+                    <currency>GBP</currency>
+                    <amount>1500</amount>
+                </price>
+            </flt:flight>
+        </flt:flights>
+    </aeroport>
+</aeroports>
+
+<!--
+1.
+/aeroport[name='John F. Kennedy International Airport']/flights/flight[2]
+
+/aeroport[name='John F. Kennedy International Airport']/flights/flight[2]/ancestor::aeroport
+/aeroport[name='John F. Kennedy International Airport']/flights/flight[2]/descendant::price
+
+/aeroport[name='John F. Kennedy International Airport']/flights/flight[2]/following::departure
+/aeroport[name='John F. Kennedy International Airport']/flights/flight[2]/preceding::arrival
+
+/aeroport[name='John F. Kennedy International Airport']/flights/flight[2]/following-sibling::flight
+/aeroport[name='John F. Kennedy International Airport']/flights/flight[2]/preceding-sibling::flight
+
+/aeroport[name='John F. Kennedy International Airport']/flights/flight[2]/attribute::class
+
+2.
+/aeroport/flights/flight[@class = (/descendant::flight/attribute::class)[1]]
+
+3.
+count(//*[text()])
+sum(//amount[text()])
+
+4.
+aeroport[1]/@latitude = 40.6442
+aeroport[1]/@latitude + true()
+aeroport[1]/flights/flight[1]/price/amount > false()
+
+5.
+/descendant::flight[@class='business']/destination/following-sibling::*
+1 zingsnis:
+    Element='<flt:flight class="business" gate="C34">
+    ...
+
+    Element='<flt:flight class="economy" gate="B12">
+    ...
+
+    Element='<flt:flight class="economy" gate="B10">
+    ...
+
+    Element='<flt:flight class="first" gate="A10">
+    ...
+
+    Element='<flt:flight class="economy" gate="B22">
+    ...
+
+    Element='<flt:flight class="business" gate="C14">
+    ...
+
+2 zingsnis:
+    Element='<flt:flight class="business" gate="C34">
+    ...
+
+    Element='<flt:flight class="business" gate="C14">
+    ...
+
+3 zingsnis:
+    Element='<destination>London Heathrow Airport</destination>'
+
+    Element='<destination>Dubai International Airport</destination>'
+
+4 zingsnis:
+    Element='<departure>
+                <date>2024-09-30</date>
+                <time>13:00</time>
+            </departure>'
+
+    Element='<arrival>
+                <date>2024-09-30</date>
+                <time>21:00</time>
+            </arrival>'
+    Element='<status>On Time</status>'
+
+    Element='<price>
+                <currency>USD</currency>
+                <amount>2500</amount>
+            </price>'
+
+    Element='<departure>
+                <date>2024-09-30</date>
+                <time>14:00</time>
+            </departure>'
+
+    Element='<arrival>
+                <date>2024-09-30</date>
+                <time>00:00</time>
+            </arrival>'
+
+    Element='<status>On Time</status>'
+    
+    Element='<price>
+                <currency>GBP</currency>
+                <amount>1500</amount>
+            </price>'
+
+6.
+/aeroport[1]/flights/descendant::price != 2500
+/aeroport[1]/flights/descendant::price = "USD 2500"
+
+/aeroport[1]/flights = true()
+/aeroport[1]/flights = false()
+
+/aeroport[1]/flights/descendant::price != /aeroport[2]/flights/descendant::price
+
+7.
+/aeroport[1]/flights/flight[1]/departure < /aeroport[1]/flights/flight[2]/departure
+-->

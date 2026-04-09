@@ -1,0 +1,181 @@
+{
+    "$schema": "http://json-schema.org/draft-01/schema#",
+
+    "definitions": {
+
+        "DateTime": {
+            "type": "object",
+            "properties": {
+                "date": { "type": "string", "format": "date" },
+                "time": { "type": "string", "format": "time" }
+            },
+            "required": ["date", "time"]
+        },
+
+        "Cost": {
+            "type": "string",
+            "pattern": "^\\d+(\\.\\d{1,2})?$"
+        },
+
+        "TLA": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+        },
+
+        "FLA": {
+            "type": "string",
+            "pattern": "^[A-Z]{4}$"
+        },
+
+        "Price": {
+            "type": "object",
+            "properties": {
+                "currency": {
+                    "$ref": "#/definitions/TLA"
+                },
+                "amount": { 
+                    "$ref": "#/definitions/Cost" 
+                }
+            },
+            "required": ["currency", "amount"] 
+        },
+
+        "FlightStatus": {
+            "type": "string",
+            "enum": ["OnTime", "Delayed", "Canceled"]
+        },
+
+        "FlightClass": {
+            "type": "string",
+            "enum": ["Economy", "Business", "First"]
+        },
+        
+        "Location": {
+            "type": "object",
+            "properties": {
+                "city": { 
+                    "type": "string"
+                },
+                "country": { 
+                    "oneOf": [
+                        { "$ref": "#/definitions/TLA" },
+                        { "type": "string", "minLength": 4 }
+                    ]
+                }
+            },
+            "anyOf": [
+                {
+                    "properties": {
+                        "state": {
+                            "type": "string"
+                        }
+                    }
+                },
+                {
+                    "properties": { 
+                        "province": { 
+                            "type": "string" 
+                        } 
+                    }
+                }
+            ],
+            "required": ["city", "country"]
+        },
+
+        "Flight": {
+            "type": "object",
+            "properties": {
+                "airline": {
+                    "type": "string"
+                },
+                "destination": {
+                    "type": "string"
+                },
+                "destination_ref": {
+                    "$ref": "#/definitions/FLA"
+                },
+                "departure": {
+                    "$ref": "#/definitions/DateTime"
+                },
+                "arrival": {
+                    "$ref": "#/definitions/DateTime"
+                },
+                "status": {
+                    "$ref": "#/definitions/FlightStatus"
+                },
+                "price": {
+                    "$ref": "#/definitions/Price"
+                },
+
+                "_class": {
+                    "$ref": "#/definitions/FlightClass"
+                },
+                "_gate": {
+                    "allOf": [
+                        { "type": "string" },
+                        { "maxLength": 5 }
+                    ]
+                }
+            },
+            "required": [
+                "airline", "destination", "destination_ref",
+                "departure", "arrival", "status",
+                "price", "_class", "_gate"
+            ]
+        },
+
+        "Aeroport": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "website": {
+                    "type": "string"
+                },
+                "location": {
+                    "$ref": "#/definitions/Location"
+                },
+                "flights": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Flight"
+                    }
+                },
+                
+                "_icao_code": {
+                    "$ref": "#/definitions/FLA"
+                },
+                "_timezone": {
+                    "$ref": "#/definitions/TLA"
+                },
+                "_latitude": {
+                    "type": "number",
+                    "minimum": -90,
+                    "maximum": 90
+                },
+                "_longitude": {
+                    "type": "number",
+                    "minimum": -180,
+                    "maximum": 180
+                }
+            },
+            "required": [
+                "name", "website", "location",
+                "flights", "_icao_code", "_timezone",
+                "_latitude", "_longitude"
+            ]
+        }
+    },
+
+    "type": "object",
+    "properties": {
+        "aeroports": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Aeroport"
+            }
+        }
+    },
+    "required": ["aeroports"]
+}

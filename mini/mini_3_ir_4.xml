@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<catalog>
+	<authors>
+		<author id="a1">
+			<name> Matthew</name>
+			<surname>Gambardella</surname>
+			<year>1968</year>
+		</author>
+		<author id="a2">
+			<name>Kim</name>
+			<surename>Ralls</surename>
+		</author>
+		<author id="a3">
+			<name>Eva</name>
+			<surname>Corets</surname>
+			<year>1975</year>
+		</author>
+		<author id="a4">
+			<name>Cynthia</name>
+			<surname>Randall</surname>
+			<year>1970</year>
+		</author>
+	</authors>
+	<books>
+		<genre type="literature">
+			<book id="bk102">
+				<author ref="a2"/>
+				<title>Midnight Rain</title>
+				<genre>Fantasy</genre>
+				<price>5.9</price>
+				<publish_date>2000-12-16</publish_date>
+				<description>A former architect battles corporate zombies, 
+      an evil sorceress, and her own childhood to become queen 
+      of the world.</description>
+			</book>
+			<book id="bk103">
+				<author ref="a3"/>
+				<title>Maeve Ascendant</title>
+				<genre>Fantasy</genre>
+				<price>5.9</price>
+				<publish_date>2000-11-17</publish_date>
+				<description>After the collapse of a nanotechnology 
+      society in England, the young survivors lay the 
+      foundation for a new society.</description>
+			</book>
+			<book id="bk104">
+				<author ref="a1"/>
+				<author ref="a3"/>
+				<title>Oberon's Legacy</title>
+				<genre>Fantasy</genre>
+				<price>5.90</price>
+				<publish_date>2001-03-10</publish_date>
+				<description>In post-apocalypse England, the mysterious 
+      agent known only as Oberon helps to create a new life 
+      for the inhabitants of London. Sequel to Maeve 
+      Ascendant.</description>
+			</book>
+			<book id="bk105">
+				<author ref="a3"/>
+				<title>The Sundered Grail</title>
+				<genre>Fantasy</genre>
+				<price>5.95</price>
+				<publish_date>2001-09-10</publish_date>
+				<description>The two daughters of Maeve, half-sisters, 
+      battle one another for control of England. Sequel to 
+      Oberon's Legacy.</description>
+			</book>
+			<book id="bk106">
+				<author ref="a4"/>
+				<title>Lover Birds</title>
+				<genre>Romance</genre>
+				<price>4.95</price>
+				<publish_date>2000-09-02</publish_date>
+				<description>When Carla meets Paul at an ornithology 
+      conference, tempers fly as feathers get ruffled.</description>
+			</book>
+		</genre>
+		<genre type="IT">
+			<book id="bk101">
+				<author ref="a1"/>
+				<author ref="a3"/>
+				<title>XML Developer's Guide</title>
+				<genre>Computer</genre>
+				<price>44.95</price>
+				<publish_date>2000-10-01</publish_date>
+				<description>An in-depth look at creating applications 
+      with XML.</description>
+			</book>
+		</genre>
+	</books>
+</catalog>
+
+<!--
+Trečia mini-užduotis:
+
+((/catalog/books/genre/book/author)[@ref = /catalog/books/genre/book[@id="bk104"]/author[1]/@ref])/following-sibling::title
+ 
+//*[position() mod 2 = 0]/name()
+
+
+Ketvirta mini-užduotis:
+
+count(/descendant::book[price = (/descendant::book[@id="bk103"]/price)])
+
+count(//*[number(.) = .])
+-->

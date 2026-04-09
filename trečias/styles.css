@@ -1,0 +1,136 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul a {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul a:hover {
+    text-decoration: underline;
+}
+
+#feedback {
+    background-color:rgb(178, 180, 180);
+}
+
+section {
+    padding: 10px;
+    margin: 10px;
+    background-color: inherit !important;
+    border-radius: 8px;
+}
+
+section h2 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #333;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+}
+
+form input, form select, form textarea {
+    padding: 8px;
+    width: 100%;
+    font-size: 16px;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #3482a7;
+    text-align: center;
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+}
+
+.image-container {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+img {
+    max-width: 50%;
+    height: auto;
+}
+
+#information ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#information li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+#information li strong {
+    display: block;
+    margin-bottom: 5px;
+    text-indent: -20px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}

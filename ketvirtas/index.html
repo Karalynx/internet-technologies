@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Sudoku</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .error-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 2px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .error-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .sudoku-board {
+            margin-bottom: 5px;
+        }
+
+        #sudoku-board td {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #999;
+            padding-right: 5px;
+        }
+
+        #sudoku-board td:first-child {
+            border-left: 2px solid #000;
+        }
+        #sudoku-board td:nth-child(3n) {
+            border-right: 2px solid #000;
+        }
+
+        #sudoku-board tr:first-child td {
+            border-top: 2px solid #000;
+        }
+        #sudoku-board tr:nth-child(3n) td {
+            border-bottom: 2px solid #000;
+        }
+
+        #sudoku-board input {
+            border: none;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sudoku</h1>
+    <div class="sudoku-board" id="sudoku-board"></div>
+    <div>
+        <button id="check-btn">Check</button>
+        <button id="reset-btn">Reset</button>
+    </div>
+
+    <div class="error-overlay" id="error-overlay"></div>
+    <div class="error-popup" id="error-popup">
+        </p>
+        <button>Close</button>
+    </div>
+    
+    <script src="sudoku.js"></script>
+</body>
+</html>

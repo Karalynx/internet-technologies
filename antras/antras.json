@@ -1,0 +1,180 @@
+{
+	"aeroports": [
+        {
+            "name": "John F. Kennedy International Airport",
+            "website": "www.jfkairport.com",
+            "location": {
+                "city": "New York City",
+                "state": "New York",
+                "country": "United States of America"
+            },
+            "flights": [
+                {
+                    "airline": "British Airways",
+                    "destination": "London Heathrow Airport",
+                    "destination_ref": "EGLL",
+                    "departure": {
+                        "date": "2024-09-30",
+                        "time": "13:00:00"
+                    },
+                    "arrival": {
+                        "date": "2024-09-30",
+                        "time": "21:00:00"
+                    },
+                    "status": "OnTime",
+                    "price": {
+                        "currency": "USD",
+                        "amount": "2500"
+                    },
+                    "_class": "Business",
+                    "_gate": "C34"
+                },
+                {
+                    "airline": "Delta Air Lines",
+                    "destination": "Los Angeles International Airport",
+                    "destination_ref": "KLAX",
+                    "departure": {
+                        "date": "2024-09-30",
+                        "time": "15:00:00"
+                    },
+                    "arrival": {
+                        "date": "2024-09-30",
+                        "time": "18:00:00"
+                    },
+                    "status": "Delayed",
+                    "price": {
+                        "currency": "USD",
+                        "amount": "300"
+                    },
+                    "_class": "Economy",
+                    "_gate": "B12"
+                },
+                {
+                    "airline": "Delta Air Lines",
+                    "destination": "Los Angeles International Airport",
+                    "destination_ref": "KLAX",
+                    "departure": {
+                        "date": "2024-10-01",
+                        "time": "10:00:00"
+                    },
+                    "arrival": {
+                        "date": "2024-10-01",
+                        "time": "13:00:00"
+                    },
+                    "status": "OnTime",
+                    "price": {
+                        "currency": "USD",
+                        "amount": "300"
+                    },
+                    "_class": "Economy",
+                    "_gate": "B10"
+                }
+            ],
+            "_icao_code": "KJFK",
+            "_timezone": "EST",
+            "_latitude": 40.6442,
+            "_longitude": -73.7822
+        },
+        {
+            "name": "London Heathrow Airport",
+            "website": "www.heathrow.com",
+            "location": {
+                "city": "London",
+                "country": "United Kingdom"
+            },
+            "flights": [
+                {
+                    "airline": "British Airways",
+                    "destination": "John F. Kennedy International Airport",
+                    "destination_ref": "KJFK",
+                    "departure": {
+                        "date": "2024-09-30",
+                        "time": "10:00:00"
+                    },
+                    "arrival": {
+                        "date": "2024-09-30",
+                        "time": "14:00:00"
+                    },
+                    "status": "OnTime",
+                    "price": {
+                        "currency": "GBP",
+                        "amount": "2000"
+                    },
+                    "_class": "First",
+                    "_gate": "A10"
+                },
+                {
+                    "airline": "Virgin Atlantic",
+                    "destination": "Dubai International Airport",
+                    "destination_ref": "OMDB",
+                    "departure": {
+                        "date": "2024-09-30",
+                        "time": "12:00:00"
+                    },
+                    "arrival": {
+                        "date": "2024-09-30",
+                        "time": "22:00:00"
+                    },
+                    "status": "OnTime",
+                    "price": {
+                        "currency": "GBP",
+                        "amount": "500"
+                    },
+                    "_class": "Economy",
+                    "_gate": "B22"
+                },
+                {
+                    "airline": "Emirates",
+                    "destination": "Dubai International Airport",
+                    "destination_ref": "OMDB",
+                    "departure": {
+                        "date": "2024-09-30",
+                        "time": "14:00:00"
+                    },
+                    "arrival": {
+                        "date": "2024-09-30",
+                        "time": "00:00:00"
+                    },
+                    "status": "OnTime",
+                    "price": {
+                        "currency": "GBP",
+                        "amount": "1500"
+                    },
+                    "_class": "Business",
+                    "_gate": "C14"
+                }
+            ],
+            "_icao_code": "EGLL",
+            "_timezone": "GMT",
+            "_latitude": 51.4700,
+            "_longitude": -0.4543
+        },
+        {
+            "name": "Dubai International Airport",
+            "website": "http://www.dubaiairports.ae",
+            "location": {
+                "city": "Dubai",
+                "country": "United Arab Emirates"
+            },
+            "flights": [],
+            "_icao_code": "OMDB",
+            "_timezone": "GST",
+            "_latitude": 25.2527,
+            "_longitude": 55.3644
+        },
+        {
+            "name": "Los Angeles International Airport",
+            "website": "http://www.flylax.com",
+            "location": {
+                "city": "Los Angeles",
+                "state": "California",
+                "country": "United States of America"
+            },
+            "flights": [],
+            "_icao_code": "KLAX",
+            "_timezone": "PDT",
+            "_latitude": 33.9428,
+            "_longitude": -118.4100
+        }
+	]
+}

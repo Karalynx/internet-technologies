@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aeroports xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="antras.xsd">
+    <aeroport icao_code="KJFK">
+        <name>John F. Kennedy International Airport</name>
+        <website>www.jfkairport.com</website>
+        <location latitude="40.6442" longitude="-73.7822">
+            <city>New York City</city>
+            <state>New York</state>
+            <country timezone="EST">United States of America</country>
+        </location>
+        <flights>
+            <flight class="Business" gate="C34">
+                <airline>British Airways</airline>
+                <destination>London Heathrow Airport</destination>
+                <destination_ref>EGLL</destination_ref>
+                <departure>
+                    <date>2024-09-30</date>
+                    <time>13:00:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-09-30</date>
+                    <time>21:00:00</time>
+                </arrival>
+                <status>OnTime</status>
+                <price>
+                    <currency>USD</currency>
+                    <amount>2500</amount>
+                </price>
+            </flight>
+            <flight class="Economy" gate="B12">
+                <airline>Delta Air Lines</airline>
+                <destination>Los Angeles International Airport</destination>
+                <destination_ref>KLAX</destination_ref>
+                <departure>
+                    <date>2024-09-30</date>
+                    <time>15:00:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-09-30</date>
+                    <time>18:00:00</time>
+                </arrival>
+                <status>Delayed</status>
+                <price>
+                    <currency>USD</currency>
+                    <amount>300</amount>
+                </price>
+            </flight>
+            <flight class="Economy" gate="B10">
+                <airline>Delta Air Lines</airline>
+                <destination>Los Angeles International Airport</destination>
+                <destination_ref>KLAX</destination_ref>
+                <departure>
+                    <date>2024-10-01</date>
+                    <time>10:00:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-10-01</date>
+                    <time>13:00:00</time>
+                </arrival>
+                <status>OnTime</status>
+                <price>
+                    <currency>USD</currency>
+                    <amount>300</amount>
+                </price>
+            </flight>
+        </flights>
+    </aeroport>
+    <aeroport icao_code="EGLL">
+        <name>London Heathrow Airport</name>
+        <website>www.heathrow.com</website>
+        <location latitude="51.4700" longitude="-0.4543">
+            <city>London</city>
+            <state/>
+            <country timezone="GMT">United Kingdom</country>
+        </location> 
+        <flights>
+            <flight class="First" gate="A10">
+                <airline>British Airways</airline>
+                <destination>John F. Kennedy International Airport</destination>
+                <destination_ref>KJFK</destination_ref>
+                <departure>
+                    <date>2024-09-30</date>
+                    <time>10:00:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-09-30</date>
+                    <time>14:00:00</time>
+                </arrival>
+                <status>OnTime</status>
+                <price>
+                    <currency>GBP</currency>
+                    <amount>2000</amount>
+                </price>
+            </flight>
+            <flight class="Economy" gate="B22">
+                <airline>Virgin Atlantic</airline>
+                <destination>Dubai International Airport</destination>
+                <destination_ref>OMDB</destination_ref>
+                <departure>
+                    <date>2024-09-30</date>
+                    <time>12:00:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-09-30</date>
+                    <time>22:00:00</time>
+                </arrival>
+                <status>OnTime</status>
+                <price>
+                    <currency>GBP</currency>
+                    <amount>500</amount>
+                </price>
+            </flight>
+            <flight class="Business" gate="C14">
+                <airline>Emirates</airline>
+                <destination>Dubai International Airport</destination>
+                <destination_ref>OMDB</destination_ref>
+                <departure>
+                    <date>2024-09-30</date>
+                    <time>14:00:00</time>
+                </departure>
+                <arrival>
+                    <date>2024-09-30</date>
+                    <time>00:00:00</time>
+                </arrival>
+                <status>OnTime</status>
+                <price>
+                    <currency>GBP</currency>
+                    <amount>1500</amount>
+                </price>
+            </flight>
+        </flights>
+    </aeroport>
+    <aeroport icao_code="OMDB">
+        <name>Dubai International Airport</name>
+        <website>http://www.dubaiairports.ae</website>
+        <location latitude="25.2527" longitude="55.3644">
+            <city>Dubai</city>
+            <state/>
+            <country timezone="GST">United Arab Emirates</country>
+        </location>
+        <flights/>
+    </aeroport>
+    <aeroport icao_code="KLAX">
+        <name>Los Angeles International Airport</name>
+        <website>http://www.flylax.com</website>
+        <location latitude="33.9428" longitude="-118.4100">
+            <city>Los Angeles</city>
+            <state>California</state>
+            <country timezone="PDT">United States of America</country>
+        </location>
+        <flights/>
+    </aeroport>
+</aeroports>

@@ -1,0 +1,27 @@
+{
+	"žaidimų_parduotuvė": {
+		"žaidimas": [
+			{
+				"pavadinimas": "Zombiai",
+				"stilius": "Šaudyklė",
+				"online": "Taip",
+				"kaina": "25$",
+				"_steam_id": "7581546580"
+			},
+			{
+				"pavadinimas": "Mario Kart",
+				"stilius": "Lenktynės",
+				"online": "Taip",
+				"kaina": "50$",
+				"_steam_id": "6539688821"
+			},
+			{
+				"pavadinimas": "Minecraft",
+				"stilius": "Išlikimas",
+				"online": "Ne",
+				"kaina": "40$",
+				"_steam_id": "5672834321"
+			}
+		]
+	}
+}

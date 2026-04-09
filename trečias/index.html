@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vilniaus oro uostas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Vilniaus oro uostas</h1>
+        <nav>
+            <ul>
+                <a href="#about">Apie</a>
+                <a href="#information">Informacija</a>
+                <a href="#flights">Skrydžiai</a>
+                <a href="#feedback">Atsiliepimas</a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="image-container">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fg2.dcdn.lt%2Fimages%2Fpix%2Fvilniaus-oro-uostas-76275883.jpg&f=1&nofb=1&ipt=7c0eca09616f217f7e7b24c1b0227eb884afdc58933b466b93975e5c624ae909&ipo=images" alt="Vilniaus oro uostas">
+    </div>
+
+    <section id="about">
+        <h2>Apie</h2>
+        <p>Vilniaus oro uostas yra didžiausias civilinis oro uostas Lietuvoje, kuris rekordiniais 2019 m. aptarnavo 5 mln. keleivių, 2020 m. - 1,3 mln. keleivių, 2021 m. - 1,9 mln. keleivių, 2022 m. - 3,9 mln. keleivių, 2023 m. - 4,41 mln. keleivių.</p>
+        <p>Oro uostas užima 326 hektarų plotą, aerodromo perimetro ilgis yra 10,54 km. Kilimo-tūpimo tako ilgis yra 2 515 m., plotis – 50 m.; PCN83/F/D/X/T; tūpimo kategorija II, įrengta „Siemens“ signalinių žiburių sistema.</p>
+        <p>Vos per 7 km. nuo miesto centro nutolęs oro uostas įsikūręs ant plokščiakalnio pietinėje Vilniaus dalyje. Oro uostą automobiliu iš miesto centro galima pasiekti per 15 min. Oro uostas teikia aviacines bei neaviacines paslaugas vietos bei užsienio juridiniams bei fiziniams asmenims.</p>
+        <a href="https://www.ltou.lt/lt/aviacines-paslaugos/skrydziu-statistika/vno-2">Statistika</a>
+    </section>
+    
+    <section id="information">
+        <h2>Informacija</h2>
+        <ul>
+            <li><strong>Automobilių parkavimo galimybės</strong> Teikiamos ilgalaikio ir trumpalaikio parkavimo paslaugos. Parkavimas prie oro uosto - 2€ į valandą.</li>
+            <li><strong>Transportas</strong> Oro uostas yra pasiekiamas viešuoju transportu, taksi. Yra tiesioginės jungtys su miesto centru.</li>
+            <li><strong>Wi-Fi paslaugos</strong> Oro uoste galite naudotis nemokamu Wi-Fi.</li>
+            <li><strong>Pasas ir dokumentai</strong> Prieš keliaudami į užsienį, įsitikinkite, kad turite visus reikiamus dokumentus, ir patikrinkite jų galiojimo laiką.</li>
+        </ul>
+    </section>
+
+    <section id="flights">
+        <h2>Skrydžiai</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Laikas</th>
+                    <th colspan="2">Tikslas</th>
+                    <th rowspan="2">Būsena</th>
+                    <th rowspan="2">Vartai</th>
+                    <th rowspan="2">Avialinija</th>
+                </tr>
+                <tr>
+                    <th>Miestas</th>
+                    <th>Valstybė</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>08:00</td>
+                    <td>Londonas</td>
+                    <td>Jungtinė Karalystė</td>
+                    <td>Laiku</td>
+                    <td>G18</td>
+                    <td>British Airways</td>
+                </tr>
+                <tr>
+                    <td>09:30</td>
+                    <td>Berlynas</td>
+                    <td>Vokietija</td>
+                    <td>Laiku</td>
+                    <td>G21</td>
+                    <td>Lufthansa</td>
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td>Stokholmas</td>
+                    <td>Švedija</td>
+                    <td>Atidėtas</td>
+                    <td>G24</td>
+                    <td>SAS</td>
+                </tr>
+                <tr>
+                    <td>14:30</td>
+                    <td>Paryžius</td>
+                    <td>Prancūzija</td>
+                    <td>Laiku</td>
+                    <td>G10</td>
+                    <td>Air France</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="feedback">
+        <h2>Atsiliepimas</h2>
+        <form action="#" method="POST">
+            <label for="name">Vardas:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">El. paštas:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="birthday">Gimimo data:</label>
+            <input type="date" id="birthday" name="birthday">
+
+            <label for="gender">Lytis:</label>
+            <select id="gender" name="gender">
+                <option value="male">Vyras</option>
+                <option value="female">Moteris</option>
+            </select>
+
+            <label for="comments">Komentarai:</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <button type="submit">Siųsti</button>
+        </form>
+    </section>
+</body>
+</html>
